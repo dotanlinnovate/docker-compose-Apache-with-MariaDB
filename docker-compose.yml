@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+       - ./html:/usr/local/apache2/htdocs/
+    ports:
+      - "2000:80"
+    links:
+      - db
+  db:
+    image: mariadb:10.4
+    environment:
+       - MYSQL_ROOT_PASSWORD=root
+       - MYSQL_DATABASE=linnovate
