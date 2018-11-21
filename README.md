@@ -59,6 +59,19 @@ For testing the connection between the Apache container with the MariaDB:
 - enter DB password (in our case) root
 - show databases;
 
+```
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| linnovate          |
+| mysql              |
+| performance_schema |
++--------------------+
+4 rows in set (0.00 sec)
+```
+
 ## Built With
 
 * [Docker](https://www.python.org/) -  Build, Manage and secure business-critical applications without the fear of technology or infrastructure lock-in.
