@@ -5,14 +5,15 @@ Creating a docker-compose file which links Apache and MariaDB images
 
 - Creating docker-HTTPD image 
 - Creating an HTML file which will be presented on our web-page
-- Using docker-compose for linking MariaDB image to
+- Using docker-compose and link MariaDB to the Apache
+- Using volumes for applying changes directly to the web-page with the HTML file located inside HTML folder
 
 ## Prerequisites
 
 - Install DockerCE according to instructions
 - Install docker-compose according to instructions
 - Install git according to instructions
-- Make sure port 2000 
+- Make sure port 2000 is up to use 
 
 ## Getting Started
 
@@ -47,6 +48,16 @@ db_1_f0d2b7292575 | 2018-11-21 13:13:23 0 [Note] Added new Master_info '' to has
 db_1_f0d2b7292575 | 2018-11-21 13:13:23 0 [Note] mysqld: ready for connections.
 db_1_f0d2b7292575 | Version: '10.4.0-MariaDB-1:10.4.0+maria~bionic'  socket: '/v                        
 ```
+
+## Testing
+
+For testing the connection between the Apache container with the MariaDB:
+- docker exec -it *Apache_image_id*  bash
+- apt-get update
+- apt-get install mysql-client
+- mysql -h db -u root -p
+- enter DB password (in our case) root
+- show databases;
 
 ## Built With
 
